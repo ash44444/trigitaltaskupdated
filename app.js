@@ -73,6 +73,7 @@ app.get("/search/:key", async (req, res) => {
     $or: [
       { name: { $regex: req.params.key } },
       { email: { $regex: req.params.key } },
+      { createdAt: { $regex: req.params.key } },
     ],
   });
 
